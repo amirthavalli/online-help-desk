@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login page</title>
+<!-- link rel="stylesheet" type="text/css" href="mystyle.css"-->
+<style type="text/css">
+div {
+     
+    width: 450px;
+    padding: 30px;
+    border: 5px solid black;
+    margin: 0; 
+}
+
+#content {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+</style>
+<script type="text/javascript">
+
+function validate()
+{
+	var uname = login.uname.value;
+	var passwd = login.pswd.value;
+	
+	if(uname == "" || passwd == "")
+	{
+		window.alert("Fields must not be empty!!");
+		return false;
+	}
+	
+}
+
+</script>
+</head>
+
+<body>
+
+
+<form action="Verify" method="post" onsubmit="return validate()" name="login">
+<br><br><br><br><br><br><br><br><br>
+<center>
+ <div align="center" id="#">
+ <font color="blue"><h2><u>WELCOME TO LOGIN SITE</u></h2></font>
+<table>
+<tr>
+<td>Enter Username: </td>
+<td><input type="text" name="uname"></td>
+</tr>
+<tr>
+<td>Enter Password: </td>
+<td><input type="password" name="pswd"></td>
+</tr>
+<tr>
+<tr>
+<td><input type="submit" Value="Login"></td>
+<td><input type="reset" name="Cancel"></td>
+</tr>
+<tr>
+<td><a href="signup.html">New User? Signup here</a></td>
+</tr>
+</table>
+
+</div>
+</center>
+</form>
+
+</body>
+</html>

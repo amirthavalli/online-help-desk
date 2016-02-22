@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign up</title>
+<style type="text/css">
+
+table
+{
+	border:6px solid black;
+	padding:16px;
+}
+th
+{
+	color:blue;
+	
+}
+td
+{
+	padding:5px;
+	
+}
+
+</style>
+<script type="text/javascript">
+
+function validate()
+{
+	
+	var uname = signup.uname.value;
+	var email = signup.email.value;
+	var pswd = signup.pswd.value;
+	var phno = signup.phno.value;
+	
+	if(uname == "" || email == "" || pswd == "" || phno == "")
+	{
+		window.alert("Fields must not be empty!!");
+		return false;
+	}
+	
+	if(isNaN(phno) || phno.length != 10)
+	{
+		window.alert("INVALID number!!");
+		return false;
+	}
+	
+	var atpos = email.indexOf("@");
+	var dotpos = email.indexOf(".");
+	
+	//alert("atpos" + atpos + "dotpos" + dotpos);
+	if(atpos < 6 || dotpos < atpos+3)
+	{
+		window.alert("Invalid email id!! Please enter valid username");
+		return false;
+	} 
+}
+
+function showuser(str)
+{ 
+	var xmlhttp;    
+	if (str == "")
+  	{
+		document.getElementById("txtHint").innerHTML="";
+  		return;  
+  	}
+	if (window.XMLHttpRequest)
+  	{// code for IE7+, Firefox, Chrome, Opera, Safari
+  		xmlhttp=new XMLHttpRequest();  
+  	}
+	else
+  	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");   
+  	}
+	xmlhttp.onreadystatechange=function()
+  	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("txtHint").innerHTML=xmlhttp.responseText;    
+		}
+	}
+	xmlhttp.open("GET","getusername.jsp?q="+str,true);
+	xmlhttp.send();
+}
+
+</script>
+</head>
+<body>
+
+
+
+<form action="Sign" method="post" onsubmit="return validate()" name="signup">
+<br><br><br><br><br><br>
+<center>
+
+<table>
+<tr>
+<th><h2><u>SIGN UP HERE</u></h2></th>
+</tr>
+<tr>
+<td>Enter Username: </td>
+<td ><input type="text" name="uname" onKeyup="showuser(this.value)"></td>
+<td><font color="red"><div id="txtHint"></div></font></td>
+</tr>
+<tr>
+<td>Enter Password: </td>
+<td><input type="password" name="pswd"></td>
+</tr>
+<tr>
+<td>Enter E-mail Id:</td>
+<td><input type="text" name="email"></td>
+</tr>
+
+<tr>
+<td>Enter Phone Number:</td>
+<td><input type="text" name="phno"></td>
+</tr>
+
+<tr>
+<td><input type="submit" Value="Sign up"></td>
+<td><input type="reset" name="Cancel"></td>
+</tr>
+</table>
+
+</center>
+</form>
+
+</body>
+</html>

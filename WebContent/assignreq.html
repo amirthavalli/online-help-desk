@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Assign request</title>
+<style type="text/css">
+div {
+     
+    width: 450px;
+    padding: 30px;
+    border: 5px solid black;
+    margin: 0; 
+}
+
+#content {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+function validate()
+{
+	
+	var fname = assign.fname.value;
+	var aname = assign.aname.value;
+	
+	
+	if(fname == "" || aname == "")
+	{
+		window.alert("Fields must not be empty!!");
+		return false;
+	}
+	
+}
+
+
+</script>
+</head>
+<body bgcolor="cyan">
+<form action="Assign" method="post" onsubmit="return validate()" name="assign">
+<br><br><br><br><br><br>
+<center>
+<div id="#">
+<font color="blue"><h2>Assign request</h2></font>
+<table>
+<tr>
+<td>Enter facility name: </td>
+<td ><input type="text" name="fname"></td>
+</tr>
+<tr>
+<td>Enter Assignee name: </td>
+<td><input type="text" name="aname"></td>
+</tr>
+
+<tr>
+<td><input type="submit" Value="assign"></td>
+<td><input type="reset" name="Cancel"></td>
+</tr>
+</table>
+</div>
+</center>
+</form>
+</body>
+</html>

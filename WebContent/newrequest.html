@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>New request</title>
+<style type="text/css">
+a
+{
+	
+	background:yellow;
+}
+
+
+</style>
+<script type="text/javascript">
+
+function validate()
+{
+	var facility = req.fname.value;
+	var desc = req.desc.value;
+	var date = req.redate.value;
+	
+	if(facility == "" || desc == "" || date == "")
+	{
+		window.alert("Fields must not be empty!!");
+		return false;
+	}
+}
+
+</script>
+</head>
+<body bgcolor="black">
+<font color="blue"><h1>Have the freedom of creating a new facility for your own college here!!</h1></font>
+<form method="post" action="Newreq" name="req" onsubmit="return validate()">
+<font color="yellow">
+<table cellspacing="10">
+<tr>
+<td>Enter facility name:</td>
+<td><input type="text" name="fname"></td>
+</tr>
+<tr>
+<td>Description:</td>
+<td><textarea rows="5" cols="40" name="desc" placeholder="Enter description here..."></textarea></td>
+</tr>
+<tr>
+<td>Select request Date:</td>
+<td><input type="date" name="reqdate"></td>
+</tr>
+<tr>
+<td><input type="submit" value="create"></td>
+</tr>
+</table>
+</font>
+</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Change password</title>
+<style type="text/css">
+div {
+     
+    width: 450px;
+    padding: 30px;
+    border: 5px solid white;
+    margin: 0; 
+}
+
+#content {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+function validate()
+{
+	var npasswd = pass.npswd.value;
+	var cpasswd = pass.cpswd.value;
+	
+	if(npasswd == "" || cpasswd == "")
+	{
+		window.alert("Fields must not be empty!!");
+		return false;
+	}
+	
+	if(npasswd != cpasswd)
+	{
+		window.alert("Confirm password should match with the new password!!");
+		return false;
+	}
+	
+}
+
+</script>
+</head>
+<body bgcolor="black">
+<form action="Pchange" method="post" onsubmit="return validate()" name="pass">
+<font color="yellow">
+<br><br><br><br><br><br>
+<center>
+<div id="#">
+<font color="blue"><h2>Change your password</h2></font>
+<table>
+<tr>
+<td>Enter new password: </td>
+<td><input type="password" name="npswd"></td>
+</tr>
+<tr>
+<td>Enter confirm password: </td>
+<td><input type="password" name="cpswd"></td>
+</tr>
+<tr>
+<tr>
+<td><input type="submit" Value="change"></td>
+<td><input type="reset" name="Cancel"></td>
+</tr>
+</table>
+</div>
+</center>
+</font>
+</form>
+</body>
+</html>
